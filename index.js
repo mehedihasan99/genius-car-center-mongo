@@ -73,7 +73,6 @@ async function run() {
             res.send(result);
         })
         // post
-
         app.post('/order', async (req, res) => {
             const order = req.body;
             const result = await orderCollection.insertOne(order);
@@ -104,6 +103,9 @@ run().catch(console.dir);
 
 app.get('/', (req, res) => {
     res.send(('genius car center is running'))
+})
+app.get('/hero', (req, res) => {
+    res.send("hero bhai runnig");
 })
 
 app.listen(port, () => {
